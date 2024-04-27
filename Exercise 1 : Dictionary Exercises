@@ -1,0 +1,8 @@
+l=[("name", "Elie"), ("job", "Instructor")]
+d1={i[0]:i[1] for i in l}
+l1=["CA", "NJ", "RI"]
+l2=["California", "New Jersey", "Rhode Island"]
+d2={l1[i]:l2[i] for i in range(len(l1))}
+l1=['a', 'e', 'i', 'o', 'u']
+d3={g:0 for g in l1}
+d4={chr(65+i):i+1 for i in range(26)}
