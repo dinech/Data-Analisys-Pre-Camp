@@ -1,0 +1,116 @@
+def difference(x,y):
+  return x-y
+
+def print_day (d):
+  l=["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"]
+  if 0<d<8: 
+    return l[d-1]
+  else:
+    return None
+
+def last_element(l):
+  if len(l)>0:
+    return l[-1]
+  else:
+    return None
+    
+def number_compare(a,b):
+  if a>b:
+    return "First is greater"
+  elif a<b:
+    return "Second is greater"
+  else:
+    return "Numbers are equal"
+    
+def single_letter_count(word, letter):
+    word = word.lower()
+    letter = letter.lower()
+    return word.count(letter)
+
+def multiple_letter_count(word):
+    d={}
+    d={k:word.count(k) for k in word}
+    return d
+    
+def is_palindrome(frase):
+  frase1= frase.lower()
+  frase=frase1.replace(' ','')
+  print(frase)
+  return frase==frase[::-1]
+  
+def frequency(l, search_term ):
+  return l.count(search_term)
+  
+def flip_case(str,w):
+ str1=''
+ for i in str:
+    if i==w and ord(i)>96:
+     str1=str1+i.upper()
+    elif i==w and ord(i)<96:
+     str1=str1+i.lower()
+    elif i==w.upper():
+     str1=str1+i.lower()
+    elif i==w.lower():
+     str1=str1+i.upper()
+    else:
+      str1=str1+i
+ return str1
+
+
+def list_manipulation(l,command,location,value=None):
+  if command=='remove' and location=='end':
+    return l.pop()
+  if command=='remove' and location=='beginning':
+    return l.pop(0)
+  if command== 'add' and location=='end':
+    return l+[value]
+  if command=='add' and location=='beginning':
+    return [value]+l
+    
+def multiply_even_numbers(l):
+  res=1
+  for i in l:
+    if i%2==0:
+      res=res*i
+  return res
+  
+def mode(l):
+  res=l[0]
+  d={l.count(i):i for i in l}
+  max=0
+  for i in d:
+    if i>max:
+      max=i
+      res= d.get(i)
+  return res
+  
+def capitalize(str):
+  str1=str[0].upper()+str[1:]
+  return str1
+  
+def compact(list):
+ list1= [l for l in list if l]  
+ return list1  
+ 
+def partition(list,f):
+ list1= [l1 for l1 in list if f(l1)]
+ list2= [l2 for l2 in list if not f(l2)]
+ return [list1,list2]
+ 
+def intersection(l1,l2):
+  return set(l1).intersection(set(l2))
+  
+def once(f):
+  n=0
+  def do_once_f(*args):
+    nonlocal n
+    if n==0:
+      n=1
+      return f(*args)
+    else:
+      return None
+  return do_once_f
+  
+@once
+def add(a,b):
+  return a+b
